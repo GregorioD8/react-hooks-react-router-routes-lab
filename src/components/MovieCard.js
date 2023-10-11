@@ -1,11 +1,22 @@
 import {Link} from 'react-router-dom';
 
-function MovieCard({title}) {
+function MovieCard({movie}) {
+
+  const genres = movie.genres.map((g) => (
+    
+    <li key={g}> 
+    {g} 
+    </li>
+    
+  ))
   
   return (
     <article>
-        <h2>{title}</h2>
-        {/* What should go here? */}
+        <h2>{movie.title}</h2>
+        {"runtime: " + movie.time + " mins"}
+        <ul>
+          {genres}
+        </ul>
     </article>
   );
 };
